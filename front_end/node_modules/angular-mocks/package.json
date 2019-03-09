@@ -1,0 +1,114 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-mocks@1.7.x",
+        "scope": null,
+        "escapedName": "angular-mocks",
+        "name": "angular-mocks",
+        "rawSpec": "1.7.x",
+        "spec": ">=1.7.0 <1.8.0",
+        "type": "range"
+      },
+      "/Users/vaibhav/Documents/personal/projects/job_portal/front_end"
+    ]
+  ],
+  "_from": "angular-mocks@>=1.7.0 <1.8.0",
+  "_hasShrinkwrap": false,
+  "_id": "angular-mocks@1.7.7",
+  "_inCache": true,
+  "_location": "/angular-mocks",
+  "_nodeVersion": "8.15.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/angular-mocks_1.7.7_1549286418072_0.6992429143105989"
+  },
+  "_npmUser": {
+    "name": "petebd",
+    "email": "pete@bacondarwin.com"
+  },
+  "_npmVersion": "6.4.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-mocks@1.7.x",
+    "scope": null,
+    "escapedName": "angular-mocks",
+    "name": "angular-mocks",
+    "rawSpec": "1.7.x",
+    "spec": ">=1.7.0 <1.8.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-mocks/-/angular-mocks-1.7.7.tgz",
+  "_shasum": "227feca8a7e9cc61c4680366db024d6563d4c6eb",
+  "_shrinkwrap": null,
+  "_spec": "angular-mocks@1.7.x",
+  "_where": "/Users/vaibhav/Documents/personal/projects/job_portal/front_end",
+  "author": {
+    "name": "Angular Core Team",
+    "email": "angular-core+npm@google.com"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "dependencies": {},
+  "description": "AngularJS mocks for testing",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-EIUUAigjCgyk4Lqspf1iM0RItOPtlKoHlqDyrYsgVmMqj5xS41BDXIqedcMAFn6Lln5Qe9YDsGQ3ZHAAoX1SgA==",
+    "shasum": "227feca8a7e9cc61c4680366db024d6563d4c6eb",
+    "tarball": "https://registry.npmjs.org/angular-mocks/-/angular-mocks-1.7.7.tgz",
+    "fileCount": 8,
+    "unpackedSize": 139363,
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcWDwSCRA9TVsSAnZWagAA9lEP/1zVvifIfx9yqLGutsIe\n9IZZu5dYX+usty6Iw/Q5WrJOp8Taml27gIxZIjyJqRi5XKtTLhNnzrZRzpT7\nx34dISfLLQaWk4QsB/Bf3zHxVsqfnd3iySKAzeC6EhiyTFC+S331kX2k/nzz\ncwRJDC4i79bkP6K3N6+MI4m3Qob0XMDxzX3yQ37jOEhsi4wNNxTxRkPH6h/l\nZao6QeJfizsjH0wRHGnIHuDlk6FtgBxH1hc/EPxI+7aW4nv9cD5DGL2B2Wt9\n1n8GIR+vKPZwCXyiFV+yJmJmRDUH50Z4CyA/oiKkSrQSb4PcDE6ZvrGrzPbt\niwX6KyIVAHEzk4zGoY+Lrs2/FF2MEsS2xE7mOTd+HiKEIlKzHEzq+JawXaNn\naxhWsIJnxJgzpCySeYm8znJeCNt1uPs5raa4hrifKd+9KUgGzSZ8/5IMf4i7\n6vJNOo8av4pyKyn/y8WWSb2mLUDHS9pDhgSketm6nm0LXmCJ5sf3yuAYRZXh\nR9mC2aueANsXIJo7bxdPYn1VPKC5OtPCwbYSnQwfMDSrmZIiG4tI+fAs6NRj\nY90A4mazkHq5CymxsunFEyIxfifaCshR9xsOoHRjs19YOWe72ssUVKSSmsbE\ncFXbiGQksKqaFMtIyTN0lfka74bzc9GhwfRVIcPC32fCNjeLgcx/o+1RoTBb\npg+0\r\n=Atsm\r\n-----END PGP SIGNATURE-----\r\n"
+  },
+  "gitHead": "512cb256cd3f8e33d79ffa1b50efc7c0ac410fdb",
+  "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-mocks": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "mocks",
+    "testing",
+    "client-side"
+  ],
+  "license": "MIT",
+  "main": "angular-mocks.js",
+  "maintainers": [
+    {
+      "name": "angular",
+      "email": "devops+npm@angular.io"
+    },
+    {
+      "name": "angularcore",
+      "email": "angular-core+npm@google.com"
+    },
+    {
+      "name": "petebd",
+      "email": "pete@bacondarwin.com"
+    }
+  ],
+  "name": "angular-mocks",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.7.7"
+}

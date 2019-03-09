@@ -1,0 +1,20 @@
+<div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Interview</th>
+            <th>Interviewer</th>
+            <th>Date</th>
+            <th>Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="perf in performance track by $index">
+            <td ng-bind="perf.round"></td>
+            <td ng-bind="perf.interviewer | name"></td>
+            <td ng-bind="perf.date | dateTime"></td>
+            <td ng-bind="perf.result | properCase"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

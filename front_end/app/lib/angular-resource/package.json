@@ -1,0 +1,113 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-resource@1.7.x",
+        "scope": null,
+        "escapedName": "angular-resource",
+        "name": "angular-resource",
+        "rawSpec": "1.7.x",
+        "spec": ">=1.7.0 <1.8.0",
+        "type": "range"
+      },
+      "/Users/vaibhav/Documents/personal/projects/job_portal/front_end"
+    ]
+  ],
+  "_from": "angular-resource@>=1.7.0 <1.8.0",
+  "_hasShrinkwrap": false,
+  "_id": "angular-resource@1.7.7",
+  "_inCache": true,
+  "_location": "/angular-resource",
+  "_nodeVersion": "8.15.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/angular-resource_1.7.7_1549286443518_0.02370819598709617"
+  },
+  "_npmUser": {
+    "name": "petebd",
+    "email": "pete@bacondarwin.com"
+  },
+  "_npmVersion": "6.4.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-resource@1.7.x",
+    "scope": null,
+    "escapedName": "angular-resource",
+    "name": "angular-resource",
+    "rawSpec": "1.7.x",
+    "spec": ">=1.7.0 <1.8.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-resource/-/angular-resource-1.7.7.tgz",
+  "_shasum": "f1961d650c1a9ec625b119274e29068e0e372ae0",
+  "_shrinkwrap": null,
+  "_spec": "angular-resource@1.7.x",
+  "_where": "/Users/vaibhav/Documents/personal/projects/job_portal/front_end",
+  "author": {
+    "name": "Angular Core Team",
+    "email": "angular-core+npm@google.com"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "dependencies": {},
+  "description": "AngularJS module for interacting with RESTful server-side data sources",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-158EpvkX2K64yDdlYHaIRxY52M+xcTyvmnSXEDBl6vuMf/DBjLVheoXqXNJzKzbUSfp+rugYIUfj91VblBltPQ==",
+    "shasum": "f1961d650c1a9ec625b119274e29068e0e372ae0",
+    "tarball": "https://registry.npmjs.org/angular-resource/-/angular-resource-1.7.7.tgz",
+    "fileCount": 8,
+    "unpackedSize": 58136,
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcWDwsCRA9TVsSAnZWagAAEPEQAJvxTPvLETpp9vsDDhho\ngmm4aGpe36bZqhqxVepk7C4nJmdRGWG7jOWqaKXaDTFnNCRvmm79yZubS5/8\noL9YU4OAlSwt08Rt4KX+aifaxVGJN4bJ0eQPLbaicppFHJy8BFfMIhQ1Rz34\nmBp+ozTZM4TNsYsUS2TLVX+zcAd+PnCOaltMo4mCQuWggvSCMQ5BzXgoTjs1\n0GMC0vl3gk4UacGFp7vZoBkvjUQsYaUjGbZnvziXeL1xlyer3oVCC475YPMi\nvik/E60+v+z0RxFNz2mZL33BaHWdFYPQZ1OeLPhcL5R6FQ5WMQAmpOPBqrdr\njihdlbhl6EQeVjNRGTe3IVHDIXNPSdiNaNovYSexgbDYo65Cmm53CL2LSpPH\ncjVP3nuwFD56bMbMgyQftV+M0vLb00ACwdhLguhLfVfduoH77JS/JOty7NtW\n1Rs/wxdXuJvVFIkWzZdE+n6yJY+PChubFKZ3Cc28legbVvy+w1vfeqpXNeGU\nGvPLJbZtzHCNeUMEbERPjLzsrI2XY0Fe/mo3DUlpxWjRxxiYehMuMNfEAVmk\nNpt4Ghkr6T35SXuMyUKEVMwQZ0xmqwAAvgzZkdSItJmQGoS6C46eWtOgDe4U\nNyJiSy5tGn+x6VQH81SrIkF2ksqgXGYw00IykM8TvvSKTYDjM2wx4BHwd2/X\nqa/Q\r\n=+02J\r\n-----END PGP SIGNATURE-----\r\n"
+  },
+  "gitHead": "6e2135cf6f21f28029dcfd63ddd9a6abf5f61093",
+  "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-resource": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "rest",
+    "client-side"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "angular",
+      "email": "devops+npm@angular.io"
+    },
+    {
+      "name": "angularcore",
+      "email": "angular-core+npm@google.com"
+    },
+    {
+      "name": "petebd",
+      "email": "pete@bacondarwin.com"
+    }
+  ],
+  "name": "angular-resource",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.7.7"
+}

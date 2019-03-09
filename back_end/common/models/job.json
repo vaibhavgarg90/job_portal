@@ -1,0 +1,44 @@
+{
+  "name": "Job",
+  "plural": "Jobs",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "companyId": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "company": {
+      "type": "belongsTo",
+      "model": "Company",
+      "foreignKey": "companyId"
+    },
+    "interviews": {
+      "type": "hasMany",
+      "model": "Interview",
+      "foreignKey": "jobId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

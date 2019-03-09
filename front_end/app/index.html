@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" ng-app="jobPortalApp">
+<head>
+    <meta charset="utf-8">
+    <title>Job Portal</title>
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="lib/angular-ui-bootstrap/dist/ui-bootstrap-csp.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="app.css"/>
+
+    <!-- Vendor JS -->
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+
+    <!-- Angular module and config -->
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+
+    <!-- Factories -->
+    <script src="factory/api.js"></script>
+    <script src="factory/modals.js"></script>
+
+    <!-- Filters -->
+    <script src="filters/ctc-filter.js"></script>
+    <script src="filters/date-time-filter.js"></script>
+    <script src="filters/experience-filter.js"></script>
+    <script src="filters/name-filter.js"></script>
+    <script src="filters/proper-case-filter.js"></script>
+
+    <!-- Directives -->
+    <script src="directives/candidate-listing.js"></script>
+    <script src="directives/job-listing.js"></script>
+    <script src="directives/performance-listing.js"></script>
+
+    <!-- Controllers -->
+    <script src="controllers/job-search-controller.js"></script>
+</head>
+<body>
+
+<div class="view-container">
+    <div ng-view class="view-frame"></div>
+</div>
+
+</body>
+</html>

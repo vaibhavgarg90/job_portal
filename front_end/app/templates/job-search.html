@@ -1,0 +1,112 @@
+<div ng-controller="JobSearchCtrl" class="container-fluid">
+
+    <!-- Main title -->
+    <div class="row">
+        <h2 class="text-center">
+            Job Consultant Portal
+        </h2>
+    </div>
+
+    <!-- Company and User -->
+    <div class="row">
+        <div class="col-md-6">
+            <h3>
+                {{user.company.name}}
+            </h3>
+        </div>
+
+        <div class="col-md-6">
+            <h3 class="pull-right">
+                {{::user | name}}
+            </h3>
+        </div>
+    </div>
+
+    <!-- Search Form -->
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <!-- Status -->
+            <div class="col-md-2">
+                <div class="radio">
+                    <label class="margin-right-15">
+                        <input value="online" type="radio" ng-value="'OPEN'" name="status" ng-model="status"/>
+                        Open
+                    </label>
+                    <label>
+                        <input value="online" type="radio" ng-value="'CLOSED'" name="status" ng-model="status"/>
+                        Closed
+                    </label>
+                </div>
+            </div>
+
+            <!-- Title -->
+            <div class="col-md-1">
+                <label class="pull-right">Title</label>
+            </div>
+
+            <!-- Search Box -->
+            <div class="col-md-7">
+                <input type="text" class="form-control" ng-model="title"
+                       uib-typeahead="job.title for job in getJobSuggestions($viewValue) | limitTo: 10"
+                       placeholder="Start typing to filter titles"
+                       typeahead-editable="true" typeahead-append-to-body="true" autocomplete="off"/>
+            </div>
+
+            <!-- Button Controls -->
+            <div class="col-md-2 pull-right">
+                <button class="btn btn-primary margin-right-15"
+                        ng-disabled="loading || !isSearchEnabled()" ng-click="searchJobs()">
+                    <i class="fas fa-search margin-right-5"></i>
+                    Search
+                </button>
+                <button class="btn btn-danger"
+                        ng-disabled="loading || !isSearchEnabled()" ng-click="reset()">
+                    <i class="fas fa-times margin-right-5"></i>
+                    Clear
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Job Listing -->
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Posted Jobs</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <job-listing jobs="jobs"
+                         loading="loading"
+                         on-select="getCandidates(jobId)">
+            </job-listing>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <!-- Candidate Listing -->
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Shortlisted</h4>
+                </div>
+            </div>
+            <candidate-listing candidates="candidates"
+                               loading="loading"
+                               on-select="getPerformance(jobId, intervieweeId)">
+            </candidate-listing>
+        </div>
+
+        <!-- Performance Listing -->
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Interviews</h4>
+                </div>
+            </div>
+            <performance-listing performance="performance"></performance-listing>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,57 @@
+{
+  "name": "Interview",
+  "plural": "Interviews",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "jobId": {
+      "type": "string",
+      "required": true
+    },
+    "interviewerId": {
+      "type": "string",
+      "required": true
+    },
+    "intervieweeId": {
+      "type": "string",
+      "required": true
+    },
+    "round": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    },
+    "result": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "job": {
+      "type": "belongsTo",
+      "model": "Job",
+      "foreignKey": "jobId"
+    },
+    "interviewer": {
+      "type": "belongsTo",
+      "model": "Employee",
+      "foreignKey": "interviewerId"
+    },
+    "interviewee": {
+      "type": "belongsTo",
+      "model": "Employee",
+      "foreignKey": "intervieweeId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,113 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-animate@1.7.x",
+        "scope": null,
+        "escapedName": "angular-animate",
+        "name": "angular-animate",
+        "rawSpec": "1.7.x",
+        "spec": ">=1.7.0 <1.8.0",
+        "type": "range"
+      },
+      "/Users/vaibhav/Documents/personal/projects/job_portal/front_end"
+    ]
+  ],
+  "_from": "angular-animate@>=1.7.0 <1.8.0",
+  "_hasShrinkwrap": false,
+  "_id": "angular-animate@1.7.7",
+  "_inCache": true,
+  "_location": "/angular-animate",
+  "_nodeVersion": "8.15.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/angular-animate_1.7.7_1549286318147_0.7547919303546589"
+  },
+  "_npmUser": {
+    "name": "petebd",
+    "email": "pete@bacondarwin.com"
+  },
+  "_npmVersion": "6.4.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-animate@1.7.x",
+    "scope": null,
+    "escapedName": "angular-animate",
+    "name": "angular-animate",
+    "rawSpec": "1.7.x",
+    "spec": ">=1.7.0 <1.8.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-animate/-/angular-animate-1.7.7.tgz",
+  "_shasum": "5422909094a41cd7404937d8a8a960f30c4d9364",
+  "_shrinkwrap": null,
+  "_spec": "angular-animate@1.7.x",
+  "_where": "/Users/vaibhav/Documents/personal/projects/job_portal/front_end",
+  "author": {
+    "name": "Angular Core Team",
+    "email": "angular-core+npm@google.com"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "dependencies": {},
+  "description": "AngularJS module for animations",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-KLbU9gtgCyNSaMZKnNe9Yi6UTlDMN2EWyokQ06TG5fbDWOePm+kv2xqeUg1S2h+ZLjK0NnoVDIvwDhVQ+AWAag==",
+    "shasum": "5422909094a41cd7404937d8a8a960f30c4d9364",
+    "tarball": "https://registry.npmjs.org/angular-animate/-/angular-animate-1.7.7.tgz",
+    "fileCount": 8,
+    "unpackedSize": 260446,
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcWDuuCRA9TVsSAnZWagAADj0QAKEexEVsYgk75ocymx/+\nyo+3hQfmk/IFZI1yrRLWqJ47BB/SrKBX0yvErQ0PU+AOzFJZoGVzvhRy50we\n0U94UIF2GrnJ/IMt0lDx10UAW9EiEWiQCO6SRDbIege9cUOhqMGhp9/QEMwk\n9pISQ31QuizoY3C6TWSSxEdnOEVrUSdDfzDwmIMSEcYs/UKcnWT5dIq2jI+W\nTStCZpw6DsG3GdEKmDNm8W12lxmqmVRB4hbyDoerpkQmtAlhFH8JsECPUykO\nRmrgxA4Bn9YeomIAJiDU8McLGNRjXCYF+MGLu9ZeSCARYBzp+xxPbj62x9JF\n+VUd9L91BJo9+mP9RlTiNiM5exM7cX4MX+IaAkVZ5iuwzMmAALZdjX55gNvg\nyjVBk5J90t3KWnbj7esUzFMLS741CSdTrcMGlj+1HWPhU+KqS6ueGxjvJeWj\nt+PSMIWwAYHMGRPfyL00/kMJklys1OYjbuA2rzPlth6rWZmxWQJs99sm7jzE\nVTfovpZcBHtwMMwvRlzM8wCpcIs4doteCANvxslIrBxbT4UhWilW5fJApa8u\nqU1+upPWc2ncQmmQAv/+h/P3zZLFXj/HQCZf65t2puVnAQRhZePaCKunR9qT\ncMbrMfCBUOjoc4OAoez3qjwSI93DCl0RsE4adzRmI+ydW+Z2uJodmrjRVKyv\n5t4E\r\n=fy+M\r\n-----END PGP SIGNATURE-----\r\n"
+  },
+  "gitHead": "ae1fb035644fa6dc3edf5e1ce284d9fe8b5de29b",
+  "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-animate": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "animation",
+    "client-side"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "angular",
+      "email": "devops+npm@angular.io"
+    },
+    {
+      "name": "angularcore",
+      "email": "angular-core+npm@google.com"
+    },
+    {
+      "name": "petebd",
+      "email": "pete@bacondarwin.com"
+    }
+  ],
+  "name": "angular-animate",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.7.7"
+}

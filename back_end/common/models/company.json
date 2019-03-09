@@ -1,0 +1,34 @@
+{
+  "name": "Company",
+  "plural": "Companies",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "employees": {
+      "type": "hasMany",
+      "model": "Employee",
+      "foreignKey": "companyId"
+    },
+    "jobs": {
+      "type": "hasMany",
+      "model": "Job",
+      "foreignKey": "companyId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
