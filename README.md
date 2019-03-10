@@ -114,8 +114,23 @@ APIs
 ----------------------------------------------------------------------------
 1. User
 
-| Method   | GET                                                                                                                                                                                                                             | Comments |
-|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| Path     | /api/users/signup                                                                                                                                                                                                               |          |
+| Method   | POST                                                                                                                                                                                                                             |
+|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Path     | /api/users/signup                                                                                                                                                                                                               |
 | Payload  | {"firstName" : "Venki","lastName" : "Kumar","companyId" : "5c84b2b88ab6e2f502cfd3c1","username" : "venki@abc.com","password" : "****","email" : "venki@abc.com"}                                                                |          |
-| Response | {"firstName": "Venki","lastName": "Kumar","companyId": "5c84b2b88ab6e2f502cfd3c1","createdAt": "2019-03-10T11:22:53.567Z","realm": "web","username": "venki@abc.com","email": "venki@abc.com","id": "5c84f38dc6658c07da30f4fb"} |          |
+| Response | {"firstName": "Venki","lastName": "Kumar","companyId": "5c84b2b88ab6e2f502cfd3c1","createdAt": "2019-03-10T11:22:53.567Z","realm": "web","username": "venki@abc.com","email": "venki@abc.com","id": "5c84f38dc6658c07da30f4fb"} |
+| Method   | GET                                                                                                                                                                                                                                                                                                                                                        |
+|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Path     | /api/users/details                                                                                                                                                                                                                                                                                                                                         |
+| Response | {"firstName": "Venki","lastName": "Kumar","companyId": "5c84b2b88ab6e2f502cfd3c1","createdAt": "2019-03-10T11:30:10.274Z","realm": "web","username": "venki@abc.com","email": "venki@abc.com","emailVerified": false,"id": "5c841359748130dc72675382","company": {"name": "ABC Consultancy","address": "ABC Road, ABC","id": "5c84b2b88ab6e2f502cfd3c1"} } |
+
+| Method   | POST                                                                                                                                                                  |
+|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Path     | /api/users/login                                                                                                                                                      |
+| Payload  | {"username" : "venki@abc.com","password" : "****"}                                                                                                                    |
+| Response | {"id": "1kFwAKNuRUHengPZsnTvCDndrGv2fP3AkEKNqKJONDNxTDgbEFidp13wZtVxnUDp","ttl": 1209600,"created": "2019-03-10T11:28:08.103Z","userId": "5c841359748130dc72675382" } |
+
+| Method      | POST                                               |
+|-------------|----------------------------------------------------|
+| Path        | /api/users/logout                                  |
+| Explanation | Logs the user out. Does not return anything (204). |
