@@ -23,9 +23,7 @@ Database
 2. sh mongo_import.sh (accepts following optional arguments)
   a. path from where to restore the data
   b. database name in which to restore (default is job_portal_db)
-  c. ip address of the mongo server (default is localhost)
-  d. port of the mongo server (default is 27017)
-3. Please modify the script appropriately if authentication is enabled.
+3. Please modify the script appropriately if authentication is enabled in MongoDB.
 
 ----------------------------------------------------------------------------
 Back End
@@ -108,6 +106,16 @@ DB Schema
 | round         | String   | Yes      | The interview round                                       |
 | date          | Date     | Yes      | The date on which interview is conducted (default is now) |
 | result        | String   | Yes      | SELECTED / REJECTED / PENDING / OFFERED                   |
+
+----------------------------------------------------------------------------
+Authentication
+----------------------------------------------------------------------------
+1. The authentication is implemented using LoopBack's in-built mechanism (User, AccessToken, ACL).
+2. Whenever a user logs in, an access token is generated and returned as a response of the login call.
+3. The client needs to set x-access-token in the request header in for the subsequent calls.
+4. At the server side, all the calls are intercepted and access token is verified.
+5. The interceptor does not check access token for login and sign up calls.
+6. If the access token is valid and not expired, the call is passed through, otherwise 401 response is returned.
 
 ----------------------------------------------------------------------------
 APIs
