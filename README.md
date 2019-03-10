@@ -137,3 +137,40 @@ APIs
 |-------------|----------------------------------------------------|
 | Path        | /api/users/logout                                  |
 | Explanation | Logs the user out. Does not return anything (204). |
+
+2. Company
+
+| Method      | POST                                                   |
+|-------------|--------------------------------------------------------|
+| Path        | /api/Companies                                         |
+| Payload     | {"name":"ABC Consultancies","address":"ABC Road, ABC"} |
+| Explanation | Registers a new company.                               |
+
+| Method      | GET                                                                                       |
+|-------------|-------------------------------------------------------------------------------------------|
+| Path        | /api/Companies                                                                            |
+| Response    | [{"name":"ABC Consultancy", "address":"ABC Road, ABC", "id": "5c84b2b88ab6e2f502cfd3c1"}] |
+| Explanation | Gets the list of all the companies.                                                       |
+
+3. Job
+
+| Method      | POST                                                                                       |
+|-------------|--------------------------------------------------------------------------------------------|
+| Path        | /api/Jobs                                                                                  |
+| Response    | {"companyId": "5c8344b7e7dbbbba8d6ddc77", "title": "Software Developer", "status": "OPEN"} |
+| Explanation | Registers a new job.                                                                       |
+
+| Method      | POST                                                                                                                                                               |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Path        | /api/Jobs/suggestions                                                                                                                                              |
+| Query Param | title=software                                                                                                                                                     |
+| Response    | [{"companyId": "5c8344b7e7dbbbba8d6ddc77", "title": "Software Developer", "date": "2019-03-09T04:46:19.503Z", "status": "OPEN", "id": "5c83451be7dbbbba8d6ddc7b"}] |
+| Explanation | Returns the suggestions for the job title.                                                                                                                         |
+
+| Method      | POST                                                                                                                                                                                                                                                                 |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Path        | /api/Jobs/search                                                                                                                                                                                                                                                     |
+| Payload     | {"status": "OPEN", "title": "software developer"}                                                                                                                                                                                                                    |
+| Response    | [{"companyId": "5c8344b7e7dbbbba8d6ddc77", "title": "Software Developer", "date": "2019-03-09T04:46:19.503Z", "status": "OPEN", "id": "5c83451be7dbbbba8d6ddc7b", "company": {"name": "Dave Pvt Ltd", "address": "Dave Pvt Ltd", "id": "5c8344b7e7dbbbba8d6ddc77"}}] |
+| Explanation | Returns the jobs for specified filter criteria.                                                                                                                                                                                                                      |
+
