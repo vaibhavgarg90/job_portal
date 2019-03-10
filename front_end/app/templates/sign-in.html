@@ -23,7 +23,7 @@
                     Sign In
                 </button>
                 <button class="btn btn-danger"
-                        ng-disabled="loading" ng-click="reset()">
+                        ng-disabled="loading || (!email && !password)" ng-click="reset()">
                     <i class="fas fa-times margin-right-5"></i>
                     Clear
                 </button>
