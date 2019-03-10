@@ -11,7 +11,7 @@ fi
 db=$2
 if [ -z "$db" ]
 then
-  db=test_db
+  db=job_portal_db
 fi
 
 echo $db
