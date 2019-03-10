@@ -14,7 +14,11 @@ module.exports = function enableAuthentication(server) {
     var method = req.method.toLowerCase();
 
     console.log('Checking :: ' + method + ' :: ' + path);
-    console.log('Checking :: ' + method + ' :: ' + path);
+    logger.debug('Checking :: ' + method + ' :: ' + path);
+
+    if (!path || path === '/') {
+      return true;
+    }
 
     if (method === 'post' && path.match(/^\/api\/users\/signup/)) {
       return true;
