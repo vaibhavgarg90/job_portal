@@ -8,10 +8,22 @@ angular
                 restrict: 'E',
                 templateUrl: '../templates/performance-listing.html',
                 scope: {
-                    performance: "="
+                    performance: "=",
+                    loading: "=",
+                    onUpdateStatus: "&"
                 },
                 link: function (scope, elem, attrs) {
 
+                    scope.results = ['REJECTED', 'PENDING', 'SELECTED', 'OFFERED'];
+
+                    scope.updateStatus = function (perf) {
+                        scope.onUpdateStatus({
+                            "jobId": perf.jobId,
+                            "intervieweeId": perf.intervieweeId,
+                            "interviewRound": perf.round,
+                            "result": perf.result
+                        });
+                    };
                 }
             };
         }

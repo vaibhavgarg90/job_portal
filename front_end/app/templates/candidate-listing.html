@@ -2,20 +2,19 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Works At</th>
-            <th>Exp</th>
-            <th>CTC</th>
+            <th style="width: 40%">Name</th>
+            <th style="width: 40%">Works At</th>
+            <th style="width: 10%">Exp</th>
+            <th style="width: 10%">CTC</th>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="candidate in candidates track by $index"
             ng-click=" searchPerformance(candidate)"
-            class="f"
             ng-class="{'info text-strong': candidate.selected, 'pointer': !loading}">
             <td ng-bind="candidate.interviewee | name">
             </td>
-            <td ng-bind="candidate.interviewee.companyId"></td>
+            <td ng-bind="candidate.interviewee.company.name"></td>
             <td ng-bind="candidate.interviewee.experience | experience"></td>
             <td ng-bind="candidate.interviewee.ctc | ctc"></td>
         </tr>

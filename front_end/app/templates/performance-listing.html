@@ -2,10 +2,10 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>Interview</th>
-            <th>Interviewer</th>
-            <th>Date</th>
-            <th>Result</th>
+            <th style="Width: 20%">Interview</th>
+            <th style="width: 40%">Interviewer</th>
+            <th style="width: 25%">Date</th>
+            <th style="width: 15%">Result</th>
         </tr>
         </thead>
         <tbody>
@@ -13,7 +13,15 @@
             <td ng-bind="perf.round"></td>
             <td ng-bind="perf.interviewer | name"></td>
             <td ng-bind="perf.date | dateTime"></td>
-            <td ng-bind="perf.result | properCase"></td>
+            <td ng-bind="perf.result | properCase" ng-if="perf.result !== 'PENDING'"></td>
+            <td ng-if="perf.result === 'PENDING'">
+                <select class="form-control"
+                        ng-disabled="loading"
+                        ng-options="result as (result | properCase) for result in results"
+                        ng-change="updateStatus(perf)"
+                        ng-model="perf.result">
+                </select>
+            </td>
         </tr>
         </tbody>
     </table>

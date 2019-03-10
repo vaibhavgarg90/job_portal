@@ -1,5 +1,8 @@
 <div ng-controller="JobSearchCtrl" class="container-fluid">
 
+    <!-- Loader -->
+    <loader ng-if="loading"></loader>
+
     <!-- Main title -->
     <div class="row">
         <h2 class="text-center">
@@ -7,33 +10,38 @@
         </h2>
     </div>
 
-    <!-- Company and User -->
     <div class="row">
+        <!-- Company -->
         <div class="col-md-6">
-            <h3>
+            <strong>
                 {{user.company.name}}
-            </h3>
+            </strong>
         </div>
 
+        <!-- User -->
         <div class="col-md-6">
-            <h3 class="pull-right">
-                {{::user | name}}
-            </h3>
+            <button class="btn btn-warning pull-right" title="Sign Out"
+                    ng-disabled="loading" ng-click="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+            <strong class="pull-right margin-right-15">
+                {{user | name}}
+            </strong>
         </div>
     </div>
 
     <!-- Search Form -->
-    <form class="form-horizontal" role="form">
+    <form class="form-horizontal border-top-bottom" role="form">
         <div class="form-group">
             <!-- Status -->
             <div class="col-md-2">
                 <div class="radio">
                     <label class="margin-right-15">
-                        <input value="online" type="radio" ng-value="'OPEN'" name="status" ng-model="status"/>
+                        <input type="radio" ng-value="'OPEN'" name="status" ng-model="status"/>
                         Open
                     </label>
                     <label>
-                        <input value="online" type="radio" ng-value="'CLOSED'" name="status" ng-model="status"/>
+                        <input type="radio" ng-value="'CLOSED'" name="status" ng-model="status"/>
                         Closed
                     </label>
                 </div>
@@ -87,11 +95,24 @@
     <div class="row">
         <!-- Candidate Listing -->
         <div class="col-md-6">
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>Shortlisted</h4>
-                </div>
+            <div class="radio">
+                <label class="margin-right-15">
+                    <input type="radio" name="candidateView"
+                           value="SHORTLIST" ng-click="setCandidateView('SHORTLIST')" ng-model="candidateView"/>
+                    Shortlist
+                </label>
+                <label class="margin-right-15">
+                    <input type="radio" name="candidateView"
+                           value="REJECT" ng-click="setCandidateView('REJECT')" ng-model="candidateView"/>
+                    Reject
+                </label>
+                <label class="margin-right-15">
+                    <input type="radio" name="candidateView"
+                           value="PENDING" ng-click="setCandidateView('PENDING')" ng-model="candidateView"/>
+                    Pending
+                </label>
             </div>
+
             <candidate-listing candidates="candidates"
                                loading="loading"
                                on-select="getPerformance(jobId, intervieweeId)">
@@ -105,7 +126,10 @@
                     <h4>Interviews</h4>
                 </div>
             </div>
-            <performance-listing performance="performance"></performance-listing>
+            <performance-listing performance="performance"
+                                 loading="loading"
+                                 on-update-status="updatePerformance(jobId, intervieweeId, interviewRound, result)">
+            </performance-listing>
         </div>
     </div>
 

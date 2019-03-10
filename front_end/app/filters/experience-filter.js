@@ -14,8 +14,18 @@ angular
                     return experience + " M";
                 }
 
-                return (experience / 12) + " Y" + (experience % 12) + " M";
+                var text = "";
 
+                var years = Math.floor(experience / 12);
+                text += years + " Y";
+
+                var months = (experience % 12);
+
+                if (months) {
+                    text += " " + months + " M";
+                }
+
+                return text;
             }
         }
     );

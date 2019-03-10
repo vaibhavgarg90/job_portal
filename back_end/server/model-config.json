@@ -13,6 +13,37 @@
       "./mixins"
     ]
   },
+  "user": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "signup": true,
+          "login": true,
+          "details": true,
+          "logout": true
+        }
+      }
+    }
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
   "Company": {
     "dataSource": "db",
     "public": true

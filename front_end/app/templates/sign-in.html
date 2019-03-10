@@ -1,0 +1,34 @@
+<div ng-controller="SignInCtrl" class="container-fluid">
+
+    <!-- Login Form -->
+    <div class="col-md-offset-3 col-md-6 margin-top-50">
+        <form class="form-horizontal" role="form">
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" ng-model="email">
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" ng-model="password">
+            </div>
+
+            <!-- Button Controls -->
+            <div class="form-group">
+                <button class="btn btn-primary margin-right-15"
+                        ng-disabled="loading || !isSignInEnabled()" ng-click="signIn()">
+                    <i class="fas fa-sign-in-alt margin-right-5"></i>
+                    Sign In
+                </button>
+                <button class="btn btn-danger"
+                        ng-disabled="loading" ng-click="reset()">
+                    <i class="fas fa-times margin-right-5"></i>
+                    Clear
+                </button>
+            </div>
+        </form>
+    </div>
+
+</div>

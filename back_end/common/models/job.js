@@ -1,6 +1,7 @@
 'use strict';
 
 var app = require('../../server/server');
+var logger = require('../../server/logger');
 
 module.exports = function (Job) {
 
@@ -10,6 +11,8 @@ module.exports = function (Job) {
     if (!searchText) {
       err = new Error("Search text is not specified.");
       err.statusCode = 422;
+      console.log(err);
+      logger.error(err);
       callback(err);
       return;
     }
@@ -29,7 +32,9 @@ module.exports = function (Job) {
         callback(null, suggestions);
       })
       .catch(function (err) {
-        err.statusCode = err.statusCode || 500;
+        err.statusCode = 500;
+        console.log(err);
+        logger.error(err);
         callback(err);
       });
   };
@@ -40,6 +45,8 @@ module.exports = function (Job) {
     if (!params || ((typeof params === "object") && (Object.keys(params).length === 0))) {
       err = new Error("Search param is not specified.");
       err.statusCode = 422;
+      console.log(err);
+      logger.error(err);
       callback(err);
       return;
     }
@@ -47,6 +54,8 @@ module.exports = function (Job) {
     if (!params.title && !params.status) {
       err = new Error("Either title or status has to be specified.");
       err.statusCode = 422;
+      console.log(err);
+      logger.error(err);
       callback(err);
       return;
     }
@@ -74,7 +83,9 @@ module.exports = function (Job) {
         callback(null, jobs);
       })
       .catch(function (err) {
-        err.statusCode = err.statusCode || 500;
+        err.statusCode = 500;
+        console.log(err);
+        logger.error(err);
         callback(err);
       });
   };
@@ -87,7 +98,39 @@ module.exports = function (Job) {
         callback(null, shortlisted);
       })
       .catch(function (err) {
-        err.statusCode = err.statusCode || 500;
+        err.statusCode = 500;
+        console.log(err);
+        logger.error(err);
+        callback(err);
+      });
+  };
+
+  Job.getRejectedCandidates = function (jobId, callback) {
+    var Interview = app.models.Interview;
+
+    Interview.getRejectedCandidates(jobId)
+      .then(function (rejected) {
+        callback(null, rejected);
+      })
+      .catch(function (err) {
+        err.statusCode = 500;
+        console.log(err);
+        logger.error(err);
+        callback(err);
+      });
+  };
+
+  Job.getPendingCandidates = function (jobId, callback) {
+    var Interview = app.models.Interview;
+
+    Interview.getPendingCandidates(jobId)
+      .then(function (rejected) {
+        callback(null, rejected);
+      })
+      .catch(function (err) {
+        err.statusCode = 500;
+        console.log(err);
+        logger.error(err);
         callback(err);
       });
   };
@@ -147,6 +190,42 @@ module.exports = function (Job) {
       root: true
     },
     description: 'Returns an array of shortlisted candidates for given job.'
+  });
+
+  Job.remoteMethod('getRejectedCandidates', {
+    http: {
+      path: '/:id/reject',
+      verb: 'get'
+    },
+    accepts: [{
+      arg: 'id',
+      type: 'string',
+      required: true
+    }],
+    returns: {
+      arg: 'rejected',
+      type: 'array',
+      root: true
+    },
+    description: 'Returns an array of rejected candidates for given job.'
+  });
+
+  Job.remoteMethod('getPendingCandidates', {
+    http: {
+      path: '/:id/pending',
+      verb: 'get'
+    },
+    accepts: [{
+      arg: 'id',
+      type: 'string',
+      required: true
+    }],
+    returns: {
+      arg: 'rejected',
+      type: 'array',
+      root: true
+    },
+    description: 'Returns an array of pending candidates for given job.'
   });
 
   Job.disableRemoteMethodByName('deleteById');

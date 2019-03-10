@@ -18,5 +18,8 @@
       "limit": "100kb"
     },
     "cors": false
+  },
+  "accessToken": {
+    "ttl": 86400
   }
 }

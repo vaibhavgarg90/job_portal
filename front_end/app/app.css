@@ -1,3 +1,7 @@
+.margin-top-50 {
+    margin-top: 50px;
+}
+
 .margin-right-5 {
     margin-right: 5px;
 }
@@ -6,10 +10,31 @@
     margin-right: 15px;
 }
 
+.padding-top-10 {
+    padding-top: 10px;
+}
+
 .pointer {
     cursor: pointer;
 }
 
 .text-strong {
     font-weight: bold;
+}
+
+.border-top-bottom {
+    border-top: 1px solid lightseagreen;
+    padding-top: 15px;
+    border-bottom: 1px solid lightseagreen;
+    margin-bottom: 15px;
+}
+
+.loader {
+    position: fixed;
+    z-index: 1100; /* z-index of modal is 1050 */
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin: -40px 0 0 -40px;
 }

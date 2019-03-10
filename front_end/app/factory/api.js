@@ -3,12 +3,12 @@
 angular
     .module('jobPortalApp')
     .factory('api',
-        ['$http', '$q', function ($http, $q) {
+        ['$http', '$q', '$timeout', function ($http, $q, $timeout) {
 
             var apiPath = "http://localhost:3000/api/";
 
-            function processServerError(err, deferred) {
-                var errMsg;
+            function processServerError(err) {
+                var errMsg = "Internal Server Error";
 
                 if (err) {
                     if (err.data) {
@@ -24,15 +24,9 @@ angular
                     } else {
                         errMsg = err;
                     }
-                } else {
-                    return "Internal Server Error";
                 }
 
-                if (deferred) {
-                    deferred.reject(errMsg);
-                } else {
-                    return errMsg;
-                }
+                return errMsg;
             }
 
             function constructUrl(model, path, params) {
@@ -71,14 +65,11 @@ angular
                     })
                     .then(
                         function (resp) {
-                            if (resp && resp.data) {
-                                deferred.resolve(resp.data);
-                            } else {
-                                deferred.resolve(resp);
-                            }
+                            var data = resp && resp.data ? resp.data : resp;
+                            deferred.resolve(data);
                         },
                         function (err) {
-                            processServerError(err, deferred);
+                            deferred.reject(processServerError(err));
                         });
 
                 return deferred.promise;
@@ -98,28 +89,22 @@ angular
                     })
                     .then(
                         function (resp) {
-                            if (resp && resp.data) {
-                                deferred.resolve(resp.data);
-                            } else {
-                                deferred.resolve(resp);
-                            }
+                            var data = resp && resp.data ? resp.data : resp;
+                            deferred.resolve(data);
                         },
                         function (err) {
-                            processServerError(err, deferred);
+                            deferred.reject(processServerError(err));
                         });
 
                 return deferred.promise;
             }
 
-            function getLoggedInUser() {
-                return {
-                    "firstName": "Venki",
-                    "lastName": "Kumar",
-                    "company": {
-                        "name": "ABC Consultancies",
-                        "address": "ABC Road, XYZ"
-                    }
-                };
+            function login(username, password) {
+                return postJson("users", "login", {"username": username, "password": password});
+            }
+
+            function getUserDetails() {
+                return get("users", "details");
             }
 
             function getJobSuggestions(title) {
@@ -135,16 +120,45 @@ angular
                 return get("Jobs", path);
             }
 
+            function getRejectedCandidates(jobId) {
+                var path = jobId + "/reject";
+                return get("Jobs", path);
+            }
+
+            function getPendingCandidates(jobId) {
+                var path = jobId + "/pending";
+                return get("Jobs", path);
+            }
+
             function getIntervieweePerformance(jobId, intervieweeId) {
                 return get("Interviews", "performance", {"jobId": jobId, "intervieweeId": intervieweeId});
             }
 
+            function updatePerformance(jobId, intervieweeId, interviewRound, result) {
+                var data = {
+                    "jobId": jobId,
+                    "intervieweeId": intervieweeId,
+                    "round": interviewRound,
+                    "result": result
+                };
+                return postJson("Interviews", "performance/update", data);
+            }
+
+            function logout() {
+                return postJson("users", "logout");
+            }
+
             return {
-                getLoggedInUser: getLoggedInUser,
+                login: login,
+                getUserDetails: getUserDetails,
                 getJobSuggestions: getJobSuggestions,
                 searchJobs: searchJobs,
                 getShortlistedCandidates: getShortlistedCandidates,
-                getIntervieweePerformance: getIntervieweePerformance
+                getRejectedCandidates: getRejectedCandidates,
+                getPendingCandidates: getPendingCandidates,
+                getIntervieweePerformance: getIntervieweePerformance,
+                updatePerformance: updatePerformance,
+                logout: logout
             };
         }]
     );
