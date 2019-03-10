@@ -168,7 +168,7 @@ angular
                     .then(
                         function (updatedPerformance) {
                             $scope.loading = false;
-                            $scope.getPerformance(jobId, intervieweeId);
+                            $scope.getCandidates(jobId);
                         },
                         handleServerError);
             };
